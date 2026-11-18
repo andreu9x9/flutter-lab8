@@ -8,7 +8,6 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Реєстрація'),
-        backgroundColor: Colors.teal[100],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -35,7 +34,6 @@ class SignupScreen extends StatelessWidget {
                 const TextField(
                   decoration: InputDecoration(
                     labelText: 'Ім’я користувача',
-                    border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.badge),
                   ),
                 ),
@@ -44,7 +42,6 @@ class SignupScreen extends StatelessWidget {
                 const TextField(
                   decoration: InputDecoration(
                     labelText: 'Логін або Email',
-                    border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.email),
                   ),
                 ),
@@ -54,18 +51,12 @@ class SignupScreen extends StatelessWidget {
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Пароль',
-                    border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.lock),
                   ),
                 ),
                 const SizedBox(height: 24),
 
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size.fromHeight(48),
-                  ),
                   onPressed: () {
                     showDialog(
                       context: context,
@@ -86,8 +77,10 @@ class SignupScreen extends StatelessWidget {
                       },
                     );
                   },
-                  child: const Text('Зареєструватися', style: TextStyle(fontSize: 16)),
+                  child: const Text('Зареєструватися'),
                 ),
+                const SizedBox(height: 12),
+
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);

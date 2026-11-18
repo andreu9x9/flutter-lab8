@@ -8,7 +8,6 @@ class ResetPasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Відновлення пароля'),
-        backgroundColor: Colors.teal[100],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -35,24 +34,20 @@ class ResetPasswordScreen extends StatelessWidget {
                 const TextField(
                   decoration: InputDecoration(
                     labelText: 'Email або логін',
-                    border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.mail_outline),
                   ),
                 ),
                 const SizedBox(height: 24),
 
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size.fromHeight(48),
-                  ),
                   onPressed: () {
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
                         title: const Text('Готово'),
-                        content: const Text('Інструкції з відновлення надіслано на пошту.'),
+                        content: const Text(
+                          'Інструкції з відновлення надіслано на пошту.',
+                        ),
                         actions: [
                           TextButton(
                             onPressed: () {
@@ -60,12 +55,12 @@ class ResetPasswordScreen extends StatelessWidget {
                               Navigator.pop(context);
                             },
                             child: const Text('OK'),
-                          )
+                          ),
                         ],
                       ),
                     );
                   },
-                  child: const Text('Відновити пароль', style: TextStyle(fontSize: 16)),
+                  child: const Text('Відновити пароль'),
                 ),
                 const SizedBox(height: 12),
 
